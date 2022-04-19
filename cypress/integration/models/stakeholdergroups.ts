@@ -62,7 +62,7 @@ export class Stakeholdergroups {
             submitForm();
             checkSuccessAlert(
                 commonView.successAlertMessage,
-                `Success! ${this.name} was added as a stakeholder group.`
+                `Success! ${this.name} was added as a(n) stakeholder group.`
             );
         }
     }

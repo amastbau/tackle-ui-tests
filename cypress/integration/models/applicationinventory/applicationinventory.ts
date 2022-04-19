@@ -259,7 +259,7 @@ export class ApplicationInventory {
             submitForm();
             checkSuccessAlert(
                 commonView.successAlertMessage,
-                `Success! ${this.name} was added as a application.`
+                `Success! ${this.name} was added as a(n) application.`
             );
         }
     }
