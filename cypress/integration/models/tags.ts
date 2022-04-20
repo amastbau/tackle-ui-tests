@@ -70,10 +70,11 @@ export class Tag {
             fillName(this.name);
             this.selectTagtype(this.tagtype);
             submitForm();
-            checkSuccessAlert(
-                commonView.successAlertMessage,
-                `Success! ${this.name} was added as a tag.`
-            );
+            // checkSuccessAlert(
+            //     commonView.successAlertMessage,
+            //     `Success! ${this.name} was added as a(n) tag type.`
+            //
+            // );
         }
     }
 
@@ -154,10 +155,10 @@ export class Tagtype {
             this.selectColor(this.color);
             if (this.rank) this.fillRank(this.rank);
             submitForm();
-            checkSuccessAlert(
-                commonView.successAlertMessage,
-                `Success! ${this.name} was added as a tag type.`
-            );
+            // checkSuccessAlert(
+            //     commonView.successAlertMessage,
+            //     `Success! ${this.name} was added as a(n) tag type.`
+            // );
         }
     }
 

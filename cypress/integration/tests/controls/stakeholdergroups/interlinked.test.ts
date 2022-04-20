@@ -41,12 +41,12 @@ describe("Stakeholder group linked to stakeholder members", { tags: "@tier1" }, 
         preservecookies();
 
         // Interceptors for stakeholder groups
-        cy.intercept("POST", "/api/controls/stakeholder-group*").as("postStakeholdergroups");
-        cy.intercept("GET", "/api/controls/stakeholder-group*").as("getStakeholdergroups");
+        cy.intercept("POST", "/api/controls/stakeholder-groups").as("postStakeholdergroups");
+        cy.intercept("GET", "/api/controls/stakeholder-groups").as("getStakeholdergroups");
 
         // Interceptors for stakeholders
-        cy.intercept("POST", "/api/controls/stakeholder*").as("postStakeholder");
-        cy.intercept("GET", "/api/controls/stakeholder*").as("getStakeholders");
+        cy.intercept("POST", "/api/controls/stakeholder").as("postStakeholder");
+        cy.intercept("GET", "/api/controls/stakeholder").as("getStakeholders");
     });
 
     it("stakeholders attach, update and delete dependency on stakeholder group", function () {

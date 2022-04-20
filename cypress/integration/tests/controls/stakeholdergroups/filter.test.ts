@@ -55,7 +55,7 @@ describe("Stakeholder groups filter validations", { tags: "@tier2" }, function (
         preservecookies();
 
         // Interceptors
-        cy.intercept("GET", "/api/controls/stakeholder-group*").as("getStakeholdergroups");
+        cy.intercept("GET", "/api/controls/stakeholder-groups").as("getStakeholdergroups");
     });
 
     after("Perform test data clean up", function () {

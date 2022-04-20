@@ -45,7 +45,7 @@ export function clickByText(fieldId: string, buttonText: string): void {
 }
 
 export function click(fieldId: string): void {
-    cy.get(fieldId).click({ force: true });
+    cy.get(fieldId).click({ force: true, multiple: true });
 }
 
 export function submitForm(): void {
@@ -64,6 +64,7 @@ export function login(): void {
     click(loginView.loginButton);
     cy.wait(5000);
     cy.get("h1", { timeout: 15000 }).contains("Application inventory");
+    selectUserPerspective("Developer")
 }
 
 export function logout(): void {
@@ -72,6 +73,7 @@ export function logout(): void {
     clickByText("a", "Logout");
     cy.wait(4000);
     cy.get("h1", { timeout: 15000 }).contains("Log in to your account");
+
 }
 
 export function selectItemsPerPage(items: number): void {
@@ -751,4 +753,9 @@ export function deleteAllTagTypes(cancel = false): void {
                     });
             }
         });
+}
+
+export function selectUserPerspective(userType: string): void {
+    click('[aria-label="Options menu"]');
+    clickByText('.pf-c-select__menu-item', userType);
 }

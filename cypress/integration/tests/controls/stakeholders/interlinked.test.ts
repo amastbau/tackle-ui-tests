@@ -17,7 +17,7 @@ import { Jobfunctions } from "../../../models/jobfunctions";
 import { tdTag, trTag, stakeholders } from "../../../types/constants";
 import { expandRow } from "../../../views/common.view";
 import * as data from "../../../../utils/data_utils";
-
+import { selectUserPerspective } from "../../../../utils/utils";
 var stakeholdergroupsList: Array<Stakeholdergroups> = [];
 var stakeholdergroupNames: Array<string> = [];
 
@@ -28,6 +28,8 @@ describe("Stakeholder linked to stakeholder groups and job function", { tags: "@
 
         // Perform login
         login();
+
+
     });
 
     beforeEach("Persist session", function () {
@@ -35,16 +37,16 @@ describe("Stakeholder linked to stakeholder groups and job function", { tags: "@
         preservecookies();
 
         // Interceptors for stakeholder groups
-        cy.intercept("POST", "/api/controls/stakeholder-group*").as("postStakeholdergroups");
-        cy.intercept("GET", "/api/controls/stakeholder-group*").as("getStakeholdergroups");
+        // cy.intercept("POST", "/api/controls/stakeholder-groups").as("postStakeholdergroups");
+        cy.intercept("GET", "/api/controls/stakeholder-groups").as("getStakeholdergroups");
 
         // Interceptors for stakeholders
-        cy.intercept("POST", "/api/controls/stakeholder*").as("postStakeholder");
-        cy.intercept("GET", "/api/controls/stakeholder*").as("getStakeholders");
+        cy.intercept("POST", "/api/controls/stakeholders").as("postStakeholder");
+        cy.intercept("GET", "/api/controls/stakeholders").as("getStakeholders");
 
         // Interceptors for job functions
-        cy.intercept("POST", "/api/controls/job-function*").as("postJobfunction");
-        cy.intercept("GET", "/api/controls/job-function*").as("getJobfunctions");
+        cy.intercept("POST", "/api/controls/job-functions").as("postJobfunction");
+        cy.intercept("GET", "/api/controls/job-functions").as("getJobfunctions");
     });
 
     it("Stakeholder group attach, update and delete dependency on stakeholder", function () {

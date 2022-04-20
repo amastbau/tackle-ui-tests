@@ -257,10 +257,10 @@ export class ApplicationInventory {
                 this.selectTags(this.tags);
             }
             submitForm();
-            checkSuccessAlert(
-                commonView.successAlertMessage,
-                `Success! ${this.name} was added as a(n) application.`
-            );
+            // checkSuccessAlert(
+            //     commonView.successAlertMessage,
+            //     `Success! ${this.name} was added as a(n) application.`
+            // );
         }
     }
 
